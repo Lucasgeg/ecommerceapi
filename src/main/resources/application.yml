@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:ecommercedb;DB_CLOSE_DELAY=-1 # for In-memory database and jdbc:h2:file:[path/database-name] for disk-based database.
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    initialization-mode: always
+    data: classpath:db-init/data.sql
+  jpa:
+    show-sql: true
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+server:
+  port: 8181
